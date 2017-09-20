@@ -1,0 +1,62 @@
+﻿<Window x:Name="QueryWindow" x:Class="EZX.MySql.Viewer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SQL Query Viewer" Height="849.079" Width="841.007" 
+        Icon="1487947260_BeOS_Query.ico"
+        Closed="MainWindow_OnClosed"
+        >
+    <Grid Margin="0,0,0,0">
+
+
+        <TextBox x:Name="TxtQuery" HorizontalAlignment="Left" Height="131" Margin="44,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="752" ToolTip="Enter Query" AcceptsReturn="True"/>
+        <Button x:Name="BtnExecute" Content="Execute" HorizontalAlignment="Left" Margin="368,237,0,0" VerticalAlignment="Top" Width="72" Height="32" Click="btnExecute_Click"/>
+        <DataGrid x:Name="GrdQuery" HorizontalAlignment="Left" Margin="10,369,0,0" VerticalAlignment="Top" Height="389" Width="813" RenderTransformOrigin="0.534,0.499" />
+        <StatusBar x:Name="StatusBar" HorizontalAlignment="Left" Height="35" Margin="10,774,0,0" VerticalAlignment="Top" Width="813" Background="#FFF1EDED" >
+            <TextBlock x:Name="StatusText"><Run Text="Status:"/></TextBlock>
+        </StatusBar>
+        <Label Content="Filter Results" HorizontalAlignment="Left" Margin="21,297,0,0" VerticalAlignment="Top" Width="99"  />
+        <TextBox x:Name="TxtFilter" HorizontalAlignment="Left" Height="23" Margin="120,300,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="602"  />
+        <Button x:Name="BtnFilter"  Content="Filter" HorizontalAlignment="Left" Margin="739,281,0,0" VerticalAlignment="Top" Width="75" Click="BtnFilter_Click"/>
+        <Button x:Name="BtnNewView"  Content="New View" HorizontalAlignment="Left" Margin="739,307,0,0" VerticalAlignment="Top" Width="75" Click="BtnNewView_Click"/>
+        <Button x:Name="BtnClear"  Content="Clear" HorizontalAlignment="Left" Margin="739,333,0,0" VerticalAlignment="Top" Width="75" Click="BtnClear_Click"/>
+        <GroupBox Header="Database" HorizontalAlignment="Left" Margin="44,10,0,0" VerticalAlignment="Top" Width="752" Height="77" FontWeight="Bold">
+            <Grid Margin="0,0,0,0">
+ 
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="43"/>
+                    <ColumnDefinition Width="98"/>
+                    <ColumnDefinition Width="41"/>
+                    <ColumnDefinition Width="49"/>
+                    <ColumnDefinition Width="43"/>
+                    <ColumnDefinition Width="69"/>
+                    <ColumnDefinition Width="42"/>
+                    <ColumnDefinition Width="93"/>
+                    <ColumnDefinition Width="111"/>
+
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.Resources>
+                    <Style TargetType="{x:Type Control}" x:Key="Default">
+                        <Setter Property="FontWeight" Value="Light"></Setter>
+                    </Style>
+
+                </Grid.Resources>
+                
+                
+                <Label Content="Host" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Column="0" Height="26" Width="38" FontWeight="Bold" />
+                <TextBox x:Name="TxtHost" HorizontalAlignment="Left" Height="22"  TextWrapping="Wrap" Text="localhost" VerticalAlignment="Center" Width="92" Grid.Column="1" FontWeight="Normal"  />
+                <Label Content="Port" HorizontalAlignment="Right" VerticalAlignment="Center" Height="26" Width="32" Grid.Column="2" RenderTransformOrigin="-1.469,0.513" FontWeight="Bold"  />
+                <TextBox x:Name="TxtPort" HorizontalAlignment="Left" Height="22"  TextWrapping="Wrap" Text="3306" VerticalAlignment="Center" Width="42" RenderTransformOrigin="0.238,0.609" Grid.Column="3"  FontWeight="Normal" />
+                <Label Content="User" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="4" Height="26" Width="41" Margin="0,8,0,9"  FontWeight="Bold"/>
+                <TextBox x:Name="TxtUser" Text="root" HorizontalAlignment="Left" Height="22"  TextWrapping="Wrap" VerticalAlignment="Center" Width="62" Grid.Column="5"  FontWeight="Normal" />
+                <Label Content="Pwd" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="6" Height="26" Width="36" Margin="0,8,0,9" FontWeight="Bold" />
+                <PasswordBox x:Name="TxtPassword" HorizontalAlignment="Left"  VerticalAlignment="Center" Width="80" Grid.Column="7" Height="20" RenderTransformOrigin="2.388,0.433" Margin="0,12,0,11"  FontWeight="Normal" />
+                <Label Content="Schema" HorizontalAlignment="Right"  VerticalAlignment="Center" Grid.Column="8" RenderTransformOrigin="0.39,0.538" Height="26" Width="59" Margin="0,8,0,9" FontWeight="Bold"/>
+                <TextBox x:Name="TxtDatabase" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="iserver" VerticalAlignment="Center" Width="120" Grid.Column="9" Margin="0,10"  FontWeight="Normal"/>
+
+            </Grid>
+        </GroupBox>
+
+
+    </Grid>
+</Window>
