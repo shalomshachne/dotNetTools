@@ -1,7 +1,7 @@
 # dotNetTools
 ## Synopsis
 
-Utilities built in .NET for simple developer tasks.
+Lightweight Sql GUI for MySQL, with some filtering capabilities on the result set.
 
 ## Code Example
 
