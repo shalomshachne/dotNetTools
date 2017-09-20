@@ -1,0 +1,14 @@
+﻿<Window x:Name="NewView" x:Class="EZX.MySql.Viewer.View"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="View" Height="422" Width="542"
+        Icon="1487947260_BeOS_Query.ico">
+    <Grid Margin="0,0,0,0">
+
+        <DataGrid x:Name="gridData" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="332" Width="514" >           
+        </DataGrid>
+        <StatusBar x:Name="StatusBar" Background="#FFF1EDED" Margin="10,347,10,10" RenderTransformOrigin="0.494,0.829" >
+            <TextBlock x:Name="StatusText">record count = </TextBlock>
+        </StatusBar>
+    </Grid>
+</Window>
