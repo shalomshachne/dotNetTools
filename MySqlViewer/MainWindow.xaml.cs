@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
+using System.Text;
 using System.Windows;
 using System.Windows.Media;
 
@@ -67,6 +68,7 @@ namespace EZX.MySql.Viewer
                     GrdQuery.ItemsSource = dataTable.DefaultView;
                     DisplayRowCount(dataTable.Rows.Count);
                     lastQuery = TxtQuery.Text;
+                    UpdateWindowTitle(lastQuery);
                 }
             }
             catch (Exception ex)
@@ -77,6 +79,21 @@ namespace EZX.MySql.Viewer
                 lastQuery = null;
                 dataTable = new DataTable(QueryTableName); // assume table is now hosed
             }
+        }
+
+        private void UpdateWindowTitle(string additionalText)
+        {
+            var prefix = App.Current.FindResource("WindowTitle") as string;
+            if (prefix == null)
+            {
+                // weird. Return
+                return;
+            }
+
+            var builder = new StringBuilder(prefix);
+            this.Title = builder.Append(": ").Append(additionalText).ToString();
+
+
         }
 
         private void DisplayError(Exception e)
