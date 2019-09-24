@@ -41,13 +41,7 @@ namespace EZX.MySql.Viewer
             TxtUser.Text = ConfigurationManager.AppSettings["user"];
             TxtPassword.Password = ConfigurationManager.AppSettings["password"];
             TxtDatabase.Text = ConfigurationManager.AppSettings["schema"];
-
-
-
         }
-
-
-
 
         private void btnExecute_Click(object sender, RoutedEventArgs e)
         {
@@ -83,7 +77,7 @@ namespace EZX.MySql.Viewer
 
         private void UpdateWindowTitle(string additionalText)
         {
-            var prefix = App.Current.FindResource("WindowTitle") as string;
+            var prefix = Application.Current.FindResource("WindowTitle") as string;
             if (prefix == null)
             {
                 // weird. Return
@@ -91,16 +85,16 @@ namespace EZX.MySql.Viewer
             }
 
             var builder = new StringBuilder(prefix);
-            this.Title = builder.Append(": ").Append(additionalText).ToString();
+            Title = builder.Append(": ").Append(additionalText).ToString();
 
 
         }
 
         private void DisplayError(Exception e)
         {
-            StatusText.Text = "Sorry charlie, but you had an Exception!" + e;
+            StatusText.Text = "Sorry Charlie, but you had an Exception!\r\n" + e;
             Debug.Print("Exception=" + e);
-            Console.WriteLine("(Console) Exception=" + e);
+            Console.WriteLine(@"(Console) Exception=" + e);
         }
 
         private string GetConnectionString()
