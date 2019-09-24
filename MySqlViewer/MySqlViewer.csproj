@@ -116,7 +116,10 @@
     <Resource Include="1487947260_BeOS_Query.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="README-PROJECT.txt" />
+    <Resource Include="docs\README-PROJECT.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="docs\How to release.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

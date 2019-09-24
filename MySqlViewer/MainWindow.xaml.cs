@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
+using System.Reflection;
 using System.Text;
 using System.Windows;
 using System.Windows.Media;
@@ -25,6 +26,17 @@ namespace EZX.MySql.Viewer
         public DataView QueryResults
         {
             get { return dataTable.DefaultView; }
+        }
+
+        public string WindowTitle
+        {
+            get
+            {
+                String version = Assembly.GetExecutingAssembly().GetName().Version.Major + "."
+                    + Assembly.GetExecutingAssembly().GetName().Version.Minor + "."
+                 + Assembly.GetExecutingAssembly().GetName().Version.Build;
+                return "SQL Query Viewer v" + version;
+            }
         }
 
         public MainWindow()
