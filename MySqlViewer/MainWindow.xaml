@@ -6,9 +6,9 @@
         MinHeight="600"  
         MinWidth="800" 
         WindowStartupLocation="CenterScreen" 
-        SizeToContent="Width"
+        SizeToContent="Manual"
         Icon="1487947260_BeOS_Query.ico"
-        Closed="MainWindow_OnClosed"
+        Closed="MainWindow_OnClosed"        
         >
 
     <Grid>

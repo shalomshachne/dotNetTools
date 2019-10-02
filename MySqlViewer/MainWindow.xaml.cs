@@ -30,12 +30,17 @@ namespace EZX.MySql.Viewer
 
         public string WindowTitle
         {
+            get { return Application.Current.FindResource("WindowTitle") + " v" + AppVersion; }
+        }
+
+        public string AppVersion
+        {
             get
             {
                 String version = Assembly.GetExecutingAssembly().GetName().Version.Major + "."
                     + Assembly.GetExecutingAssembly().GetName().Version.Minor + "."
                  + Assembly.GetExecutingAssembly().GetName().Version.Build;
-                return "SQL Query Viewer v" + version;
+                return version;
             }
         }
 
@@ -89,17 +94,7 @@ namespace EZX.MySql.Viewer
 
         private void UpdateWindowTitle(string additionalText)
         {
-            var prefix = Application.Current.FindResource("WindowTitle") as string;
-            if (prefix == null)
-            {
-                // weird. Return
-                return;
-            }
-
-            var builder = new StringBuilder(prefix);
-            Title = builder.Append(": ").Append(additionalText).ToString();
-
-
+            Title = WindowTitle + ": " + additionalText;
         }
 
         private void DisplayError(Exception e)
