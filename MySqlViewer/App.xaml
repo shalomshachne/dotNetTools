@@ -7,7 +7,7 @@
                
     <Application.Resources>
         <ResourceDictionary>
-            <system:String x:Key="WindowTitle">SQL Query Viewer</system:String>
+            <system:String x:Key="WindowTitle">SQL Query Viewer</system:String> 
         </ResourceDictionary>
     </Application.Resources>
 </Application>

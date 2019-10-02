@@ -95,7 +95,7 @@ namespace EZX.MySql.Viewer
         private void UpdateWindowTitle(string additionalText)
         {
             Title = WindowTitle + ": " + additionalText;
-        }
+        } 
 
         private void DisplayError(Exception e)
         {
