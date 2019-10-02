@@ -4,7 +4,6 @@
         Title="View"
         MinWidth="500"
         MinHeight="500"
-        SizeToContent="WidthAndHeight"
         Icon="1487947260_BeOS_Query.ico">
     <Grid>
         <Grid.RowDefinitions>

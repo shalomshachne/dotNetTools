@@ -4,9 +4,8 @@
         xmlns:system="clr-namespace:System;assembly=mscorlib"
         Title="{Binding WindowTitle, RelativeSource={RelativeSource Mode=Self}}" 
         MinHeight="600"  
-        MinWidth="800" 
+        MinWidth="815" 
         WindowStartupLocation="CenterScreen" 
-        SizeToContent="Manual"
         Icon="1487947260_BeOS_Query.ico"
         Closed="MainWindow_OnClosed"        
         >
@@ -21,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="700" Width="*"/>
+            <ColumnDefinition MinWidth="500" Width="*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.Resources>

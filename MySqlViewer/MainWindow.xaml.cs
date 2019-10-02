@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Diagnostics;
+using System.Globalization;
 using System.Reflection;
 using System.Text;
 using System.Windows;
@@ -58,6 +59,8 @@ namespace EZX.MySql.Viewer
             TxtUser.Text = ConfigurationManager.AppSettings["user"];
             TxtPassword.Password = ConfigurationManager.AppSettings["password"];
             TxtDatabase.Text = ConfigurationManager.AppSettings["schema"];
+            Height = int.Parse(ConfigurationManager.AppSettings["height"]);
+            Width = int.Parse(ConfigurationManager.AppSettings["width"]);
         }
 
         private void btnExecute_Click(object sender, RoutedEventArgs e)
@@ -200,17 +203,15 @@ namespace EZX.MySql.Viewer
                      ConfigurationManager.OpenExeConfiguration
                                 (ConfigurationUserLevel.None);
 
-
             config.AppSettings.Settings["host"].Value = TxtHost.Text;
             config.AppSettings.Settings["port"].Value = TxtPort.Text;
             config.AppSettings.Settings["user"].Value = TxtUser.Text;
             config.AppSettings.Settings["password"].Value = TxtPassword.Password;
             config.AppSettings.Settings["schema"].Value = TxtDatabase.Text;
+            config.AppSettings.Settings["height"].Value = Height.ToString(CultureInfo.CurrentCulture);
+            config.AppSettings.Settings["width"].Value = Width.ToString(CultureInfo.CurrentCulture);
 
             config.Save();
-
-
-
         }
     }
 }
