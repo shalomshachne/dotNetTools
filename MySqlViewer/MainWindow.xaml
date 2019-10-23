@@ -32,7 +32,7 @@
         <GroupBox Grid.Row="0" Grid.Column="0" Header="Database" Margin="15,0,15,0" VerticalAlignment="Center">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="30" ></RowDefinition>
+                    <RowDefinition Height="33" ></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
